@@ -11,7 +11,7 @@ const RequiredAuth: FC<{ children: ReactNode }> = ({ children }) => {
 		return (
 			<Navigate
 				to={'/sign-in'}
-				state={'Инстанс не авторизован'}
+				state={'Некорректные данные инстанса'}
 				replace
 			/>
 		);
