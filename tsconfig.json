@@ -21,7 +21,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"@pages/*": ["./src/pages/*"],
-			"@shared/*": ["./src/shared/*"]
+			"@shared/*": ["./src/shared/*"],
+			"@redux/*": ["./src/redux/*"]
 		}
 	},
 	"include": ["src"],
