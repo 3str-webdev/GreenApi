@@ -1,6 +1,7 @@
 import ChatPage from '@pages/ChatPage/ChatPage';
 import SignInPage from '@pages/SignInPage/SignInPage';
 import RequiredInstanceData from '@shared/hoc/RequiredInstanceData/RequiredInstanceData';
+import Chat from '@shared/modules/Chat/Chat';
 import { createHashRouter } from 'react-router-dom';
 import Root from './Root';
 
@@ -14,12 +15,22 @@ export const router = createHashRouter([
 				element: <SignInPage />,
 			},
 			{
-				index: true,
+				path: '/',
 				element: (
 					<RequiredInstanceData>
-						<ChatPage />,
+						<ChatPage />
 					</RequiredInstanceData>
 				),
+				children: [
+					{
+						path: ':chatId',
+						element: (
+							<RequiredInstanceData>
+								<Chat />
+							</RequiredInstanceData>
+						),
+					},
+				],
 			},
 		],
 	},
