@@ -24,11 +24,7 @@ export const router = createHashRouter([
 				children: [
 					{
 						path: ':chatId',
-						element: (
-							<RequiredInstanceData>
-								<Chat />
-							</RequiredInstanceData>
-						),
+						element: <Chat />,
 					},
 				],
 			},
