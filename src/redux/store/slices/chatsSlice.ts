@@ -2,12 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ChatModel } from '@shared/types/chatModel';
 import { MessageModel } from '@shared/types/messageModel';
 
-const initialState: ChatModel[] = [
-	{
-		chatId: '79218104153@c.us',
-		messages: [],
-	},
-];
+const initialState: ChatModel[] = [];
 
 const chatsSlice = createSlice({
 	name: 'Chats',
