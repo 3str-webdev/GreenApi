@@ -1,19 +1,19 @@
+import { messagesApi } from '@redux/api';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { instanceApi } from '@redux/api/instanceApi/instanceApi';
+import chatsSlice from './slices/chatsSlice';
 import instanceSlice from './slices/instanceSlice';
-import authSlice from './slices/authSlice';
 
 const rootReducer = combineReducers({
 	instanceReducer: instanceSlice,
-	authReducer: authSlice,
-	[instanceApi.reducerPath]: instanceApi.reducer,
+	chatsReducer: chatsSlice,
+	[messagesApi.reducerPath]: messagesApi.reducer,
 });
 
 export const setupStore = () => {
 	return configureStore({
 		reducer: rootReducer,
 		middleware: getDefaultMiddleware =>
-			getDefaultMiddleware().concat(instanceApi.middleware),
+			getDefaultMiddleware().concat(messagesApi.middleware),
 	});
 };
 
