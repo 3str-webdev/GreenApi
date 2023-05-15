@@ -17,7 +17,7 @@ const Chat: FC = () => {
 			direction={'column'}
 			gap={2}
 		>
-			<Text fontSize={'xl'}>{phone}</Text>
+			<Text fontSize={'2xl'}>{phone}</Text>
 			<Spacer />
 			{chat?.messages && !!chat.messages.length && (
 				<ChatMessagesList messages={chat?.messages} />
